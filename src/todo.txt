@@ -1,0 +1,12 @@
+- fix the select s the arrow has border-radius
+
+- fix the sizings in the cart so when you change the quantity
+
+- make the 0 be 0.00 as well as all numbers
+
+- make the item carts center in mobile mode
+
+- make the cart logo in the navbar larger
+
+
+
