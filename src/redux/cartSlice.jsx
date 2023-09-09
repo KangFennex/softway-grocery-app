@@ -25,17 +25,15 @@ const cartSlice = createSlice({
       }
 
       // apply the milk promo (get the 4th milk for free, so + 1)
-
-      if (item?.product.name.includes("milk")) {
+      if (item?.product.name.includes("Milk")) {
         item.quantity =
           item.quantity % 3 === 0 ? item.quantity + 1 : item.quantity;
       }
 
-      // apply the wasabi promo (Buy 1 get 1 free)
-      if (item?.product.name.includes("wasabi")) {
-        if (item.quantity % 2 === 0) {
-          item.quantity += 1;
-        }
+      // apply the wasabi promo (Buy 2 get 1 free)
+      if (item?.product.name.includes("Wasabi")) {
+        item.quantity =
+          item.quantity % 2 === 0 ? item.quantity + 1 : item.quantity;
       }
     },
 
@@ -43,15 +41,13 @@ const cartSlice = createSlice({
       const item = state.cart.find(
         (item) => item.product.id === action.payload.id
       );
-      if (item) {
-        // remove the item if there is only 1 in the cart
-        if (item.quantity === 1) {
-          state.cart = state.cart.filter(
-            (item) => item.product.id !== action.payload.id
-          );
-          return;
-        }
+      if (item && item.quantity > 1) {
         item.quantity -= 1;
+      } else {
+        // remove the item if there is only 1 in the cart
+        state.cart = state.cart.filter(
+          (item) => item.product.id !== action.payload.id
+        );
       }
     },
 
@@ -69,30 +65,28 @@ export const totals = createSelector([items], (items) => {
   let subtotal = 0;
   let discount = 0;
 
+  // locate the items with discounts
   // locate the wasabi item
-  const wasabiItem = items.find((item) => item.product.name.includes("wasabi"));
+  const wasabiItem = items.find((item) => item.product.name.includes("Wasabi"));
 
   // locate the orange item
   const orangesItem = items.find((item) =>
-    item.product.name.includes("oranges")
+    item.product.name.includes("Oranges")
   );
 
-  // locate the butter item
-  const butterItem = items.find((item) => item.product.name.includes("butter"));
-
   // locate the milk item
-  const milkItem = items.find((item) => item.product.name.includes("milk"));
+  const milkItem = items.find((item) => item.product.name.includes("Milk"));
 
   // calculate discount
   const milkDiscount = parseFloat(
     (Math.trunc((milkItem?.quantity || 0) / 4) * 3.85).toFixed(2)
   );
 
-  // calculate discount for wasabi (Buy 1 get 1 free)
+  // calculate discount for wasabi (Buy 2 get 1 free)
   let wasabiDiscount = 0;
   if (wasabiItem) {
     wasabiDiscount = parseFloat(
-      (Math.trunc(wasabiItem?.quantity / 2) * wasabiItem.product.price).toFixed(
+      (Math.trunc(wasabiItem?.quantity / 3) * wasabiItem.product.price).toFixed(
         2
       )
     );
@@ -100,17 +94,13 @@ export const totals = createSelector([items], (items) => {
 
   // calculate discount for oranges (30% off)
   let orangesDiscount = 0;
+  const orangesDiscountPercentage = 0.3;
   if (orangesItem) {
     orangesDiscount = parseFloat(
-      (0.3 * orangesItem.quantity * orangesItem.product.price).toFixed(2)
-    );
-  }
-
-  // apply the butter discount only if there is bread in the cart
-  let butterDiscount = 0;
-  if (items.find((item) => item.product.name.includes("bread"))) {
-    butterDiscount = parseFloat(
-      (Math.trunc((butterItem?.quantity || 0) / 2) * (1.99 * 0.5)).toFixed(2)
+      (
+        orangesDiscountPercentage *
+        (orangesItem.quantity * orangesItem.product.price)
+      ).toFixed(2)
     );
   }
 
@@ -120,18 +110,12 @@ export const totals = createSelector([items], (items) => {
   });
 
   discount = parseFloat(
-    (milkDiscount + butterDiscount + wasabiDiscount + orangesDiscount).toFixed(
-      2
-    )
+    (milkDiscount + wasabiDiscount + orangesDiscount).toFixed(2)
   );
 
   return {
     subtotal: parseFloat(subtotal).toFixed(2),
-    discount,
-    milkDiscount,
-    butterDiscount,
-    wasabiDiscount,
-    orangesDiscount,
+    discount: parseFloat(discount).toFixed(2),
     total: parseFloat(subtotal - discount).toFixed(2),
   };
 });

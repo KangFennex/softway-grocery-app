@@ -39,7 +39,7 @@ const Product = ({ id, name, image, description, rating, price }) => {
           <select
             onChange={handleQuantitySelect}
             value={selectedValue}
-            class="quantity-select"
+            className="quantity-select"
           >
             <option value="1">1</option>
             <option value="2">2</option>

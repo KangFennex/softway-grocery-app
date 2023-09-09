@@ -10,9 +10,6 @@ const promos = [
     promo: "30% off the pack of oranges",
   },
   {
-    promo: "Buy 2 butter and get a bread at 50% off",
-  },
-  {
     promo: "Buy 3 milks and get the 4th milk for free",
   },
 ];
@@ -37,7 +34,7 @@ const Home = () => {
         </section>
         <section>
           <Link to="/products">
-            <button class="browse-button">Browse products</button>
+            <button className="browse-button">Browse products</button>
           </Link>
         </section>
       </article>
