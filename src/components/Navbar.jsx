@@ -8,12 +8,15 @@ const Navbar = () => {
   return (
     <nav>
       <div className="navbar">
-        <Link to="/">
+        <Link to="/" className="navbar-logo">
           <h2>Softway</h2>
         </Link>
-        <Link to="/cart">
-          <MdOutlineShoppingCart />
-          <span id="nmb-items">{cartItems.length}</span>
+        <Link to="/products" className="navbar-products">
+          <h3>Browse products</h3>
+        </Link>
+        <Link to="/cart" className="navbar-items">
+          <MdOutlineShoppingCart size={35} className="navbar-icon" />
+          <span className="nmb-items">{cartItems.length}</span>
         </Link>
       </div>
     </nav>

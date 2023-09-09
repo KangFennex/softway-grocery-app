@@ -29,24 +29,53 @@ body {
   align-items: center;
   height: 5rem;
   padding: 0.5rem 2rem;
+  padding-right: 3rem;
   font-size: 1.5rem;
   background-color: var(--main-dark);
 }
 
-.navbar h2 {
-  letter-spacing: 0.05rem;
-}
-
 .navbar a {
   text-decoration: none;
+}
+
+.navbar-logo {
+  position: relative;
+}
+
+.navbar-products {
+  position: absolute;
+  left: 12rem;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-logo h2 {
   font-family: "Lilita One", cursive;
+  color: var(--main-pink);
+  letter-spacing: 0.05rem;
+  padding-bottom: 0.4rem;
+}
+
+.navbar-products h3 {
+  color: var(--main-white);
+}
+
+.navbar-icon {
   color: var(--main-pink);
 }
 
-#nmb-items {
+.navbar-icon:hover {
+  color: var(--secondary-pink);
+}
+
+.nmb-items {
   margin-left: 0.5rem;
   color: var(--main-white);
   font-size: 2rem;
+  width: 20%;
 }
 
 /* hero */
