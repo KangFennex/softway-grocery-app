@@ -29,8 +29,7 @@ const InitialProducts = {
       id: nanoid(),
       name: "Flower Bouquet",
       image: flowers,
-      description:
-        "A bouquet of fresh and beautiful flowers fit for any occasions.",
+      description: "A bouquet of beautiful flowers fit for any occasions.",
       price: 6.99,
     },
     {
@@ -44,15 +43,14 @@ const InitialProducts = {
       id: nanoid(),
       name: "Milk",
       image: milk,
-      description:
-        "Semi skimmed milk that comes straight from the Alpes farmers.",
+      description: "Semi skimmed milk that comes from Loofa the cow.",
       price: 3.85,
     },
     {
       id: nanoid(),
       name: "Butter",
       image: butter,
-      description: "Produced by us to insure high quality butter.",
+      description: "Produced by us to insure for high quality and taste.",
       price: 2.97,
     },
     {

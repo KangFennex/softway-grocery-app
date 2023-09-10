@@ -27,9 +27,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
-  padding: 0.5rem 2rem;
-  padding-right: 3rem;
+  height: 3rem;
+  padding: 0.5rem 20px;
+  padding-right: 30px;
   font-size: 1.5rem;
   background-color: var(--main-dark);
 }
@@ -44,7 +44,7 @@ body {
 
 .navbar-products {
   position: absolute;
-  left: 12rem;
+  left: 11rem;
 }
 
 .navbar-items {
@@ -103,7 +103,7 @@ body {
 }
 
 .promo-lead h2 {
-  font-size: 5rem;
+  font-size: 3rem;
   letter-spacing: 0.05rem;
   font-family: "Lilita One", cursive;
   color: var(--main-pink);
@@ -111,7 +111,7 @@ body {
 }
 
 .promo-lead img {
-  width: 25rem;
+  width: 15rem;
   margin-top: -1.5rem;
 }
 
@@ -127,7 +127,7 @@ body {
 
 .promo h3 {
   margin-left: 2rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--main-dark);
 }
@@ -150,13 +150,14 @@ body {
 /* products section */
 
 .products-page-container h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-left: 2rem;
 }
 
 .products-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -165,8 +166,8 @@ body {
 .product {
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  min-width: 450px;
+  width: 100%;
+  max-width: 400px;
   max-height: 10rem;
   padding: 0.5rem 1rem;
   margin: 0.5rem;
@@ -190,11 +191,12 @@ body {
 
 .product-content {
   width: 65%;
+  height: 100%;
+  font-size: 0.8rem;
   padding-left: 1rem;
 }
 
 .product-description h4 {
-  margin-top: -1rem;
   font-weight: 300;
 }
 
@@ -234,6 +236,9 @@ body {
 
 .cart-page-container {
   padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cart-header {
@@ -243,13 +248,13 @@ body {
 }
 
 .cart-header h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-right: 2rem;
   margin-left: 2rem;
 }
 
 .cart-items {
-  width: 100%;
+  width: 95%;
   padding: 0.5rem;
 }
 
@@ -297,10 +302,9 @@ body {
 .cart-buttons {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .quantity-buttons {
@@ -325,8 +329,8 @@ body {
 }
 
 .cart-quantity {
-  min-width: 5rem;
-  max-width: 5rem;
+  min-width: 50px;
+  max-width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,6 +353,12 @@ body {
   font-size: 1rem;
 }
 
+.item-total-cost {
+  min-width: 18%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .cart-transaction {
   width: 100%;
   display: flex;
@@ -363,12 +373,14 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+  font-size: 0.8rem;
   background-color: var(--main-grey);
 }
 
 .cart-totals div {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -410,7 +422,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 300px;
-    height: 300px;
+    height: 250px;
     min-width: 300px;
     max-height: 300px;
   }
@@ -463,7 +475,7 @@ body {
     border-bottom: 3px solid black;
     color: var(--main-white);
     font-size: 1.5rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     position: relative;
   }
 

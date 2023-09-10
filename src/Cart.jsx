@@ -11,7 +11,7 @@ const Cart = () => {
     <article className="cart-page-container">
       <section className="cart-header">
         <h2>Your Cart</h2>
-        <MdOutlineShoppingCart size={40} />
+        <MdOutlineShoppingCart size={30} />
       </section>
       <div className="cart-items-container">
         <div className="cart-categories">
@@ -34,16 +34,16 @@ const Cart = () => {
       <section className="cart-transaction">
         <div className="cart-totals">
           <div>
-            <h3>Subtotal</h3>
-            <div>{subtotal} $</div>
+            <h3>Subtotal:</h3>
+            <span>{subtotal} $</span>
           </div>
           <div>
-            <h3>Discount</h3>
-            <div>{discount} $</div>
+            <h3>Discount:</h3>
+            <span>{discount} $</span>
           </div>
           <div>
-            <h3>Total</h3>
-            <div>{total} $</div>
+            <h3>Total:</h3>
+            <span>{total} $</span>
           </div>
         </div>
         <div>

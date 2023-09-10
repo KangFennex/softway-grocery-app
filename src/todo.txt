@@ -6,6 +6,6 @@
 
 - fix the navbar on mobile + medium screen
 
-
+- fox the position of Total in the cart
 
 

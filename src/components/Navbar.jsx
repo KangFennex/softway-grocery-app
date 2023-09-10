@@ -12,7 +12,7 @@ const Navbar = () => {
           <h2>Softway</h2>
         </Link>
         <Link to="/products" className="navbar-products">
-          <h3>Browse products</h3>
+          <h3>Shop</h3>
         </Link>
         <Link to="/cart" className="navbar-items">
           <MdOutlineShoppingCart size={35} className="navbar-icon" />
