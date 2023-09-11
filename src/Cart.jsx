@@ -46,8 +46,8 @@ const Cart = () => {
             <span>{total} $</span>
           </div>
         </div>
-        <div>
-          <button className="cart-complete">Complete your order</button>
+        <div className="cart-complete">
+          <button className="cart-complete-button">Complete your order</button>
         </div>
       </section>
     </article>
